@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+import Header from "./components/Header";
+
 
 class App extends React.Component {
   increaseCounter = () => {
@@ -12,7 +13,6 @@ class App extends React.Component {
   handleChange = (event) => {
   this.setState({todo: event.target.value});
   }
-
   constructor() {
     super();
     this.state = {
@@ -23,10 +23,13 @@ class App extends React.Component {
     
   }
 
+
   render() {
     const listItems = this.state.todos.map((todo) => <li>{todo}</li>);
     return (
       <div>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"></link>
+        <Header/>
         <form onSubmit={this.handleForm}>
           <label>
             To do List:
